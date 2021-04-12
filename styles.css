@@ -1,0 +1,182 @@
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+
+    height:200vh;
+}
+
+nav{
+
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    top: 0;
+    justify-content: space-around;
+    transition: 0.6s; /* slows down the transition when webpage is scrolled */
+}
+
+.logo{
+
+    color: black;
+    letter-spacing: 2px;
+    font-size: 1.8em;
+}
+
+.nav-links{
+
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li{
+
+    list-style: none;
+}
+
+.nav-links a{
+
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0 20px;
+    letter-spacing: 2px;
+    color: black;
+}
+
+/*---------------------------------------*/
+
+.hamburger-icon{
+
+    display: none;
+}
+
+.hamburger-icon div{
+
+    height: 3px;
+    width: 30px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/*----------------------------------------*/
+
+
+@media (max-width: 900px) {
+
+    body{
+
+        overflow-x: hidden;
+    }
+
+    nav{
+
+        background-color: white;
+    }
+
+    .nav-links{
+
+        position: fixed;
+        height: 94vh;
+        top: 50px; /* depending on navbar height to make this menu go underneath it */
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: transform 0.5s ease-in;
+
+        right: 0px; /* Set menu to right side */
+        transform: translateX(100%); /* menu moves to the left from the right side */
+
+        /*left: 0px; /* Set menu to left side */
+        /*transform: translateX(-100%); /* menu moves to the right from the left side */
+    }
+
+    .nav-links li{
+
+        opacity: 0;
+    }
+
+    .hamburger-icon{
+
+        display: block;
+        cursor: pointer;
+    }
+    
+}
+
+/*--------------------------------*/
+
+.nav-active {
+    transform: translateX(0%); /* ensure the menu is fully out */
+}
+
+@keyframes navLinkFade {
+from {
+    opacity: 0;
+
+    /* Remove the transform if you dont want sliding links */
+    transform: translateX(50px); /* Links slide in from right side */
+    /*transform: translateX(-50px); /* Links slide in from left side */
+}
+to  {
+    opacity: 1;
+    transform: translateX(0);
+    }
+}
+
+/*----Rotate the hamburger menu into a close sign ----*/
+.toggle .line1 {
+transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+opacity: 0;
+}
+
+.toggle .line3 {
+transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/*--------------------------------------------*/
+
+.banner{
+
+    height: 100vh;
+    width: 100%;
+    background: url(images/the\ xenoblade\ x.jpg);
+    background-size: cover;
+}
+
+/*----------Make Navbar sticky------------*/
+nav.sticky{
+
+    background-color: white;
+    height: 60px;
+}
+
+nav.sticky .logo,
+nav.sticky ul li a{
+
+    color: black;
+}
+
+
+
+
+
+
+
+
+
